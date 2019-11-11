@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Devs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 justify-content-between">
+                <h1>Developers</h1>
+                <div class="developers">
+                    <ul>
+                        <li>Name: <span class="name"></span></li>
+                        <li>Job: <span class="job"></span></li>
+                        <li>Skills:
+                            <ol class="skill"></ol>
+                            <hr>
+                            <hr>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->  
+    <script src="jQuery/jquery-3.4.1.js"></script>
+    <script src="PopperJs/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "developers.json",
+                dataType: "json",
+                contentType: "application/json; charset=utf8",
+                success: function (data, textStatus, jqXHR) {
+                    var dev = $('.developers').detach();
+                    var space = '';
+                    $.each(data.developers, function (i, item) {
+                        $('.col-md-12').append(dev.html());
+                        $($('.name')[i]).text(item.name);
+                        $($('.job')[i]).text(item.job);
+                        var space = '';
+                        $.each(item.skills, function (index, skillItem) {
+                            space = space + "<li>" + skillItem.skill + "</li>";
+                        });
+                        $($('.skill')[i]).html(space);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

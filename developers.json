@@ -1,0 +1,45 @@
+{
+    "developers": [{
+            "name": "Maria",
+            "job": "Junior Developer",
+            "skills": [{
+                    "skill": "PHP"
+                },
+                {
+                    "skill": "JavaScript"
+                },
+                {
+                    "skill": "HTML"
+                }
+            ]
+        },
+        {
+            "name": "Simona",
+            "job": "Junion Developer",
+            "skills": [{
+                    "skill": "MySQL"
+                },
+                {
+                    "skill": "JavaScript"
+                },
+                {
+                    "skill": "PHP"
+                }
+            ]
+        },
+        {
+            "name": "Alin",
+            "job": "Junior Developer",
+            "skills": [{
+                    "skill": "HTML"
+                },
+                {
+                    "skill": "JavaScript"
+                },
+                {
+                    "skill": "CSS"
+                }
+            ]
+        }
+    ]
+}
